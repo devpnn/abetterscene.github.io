@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a better scene</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Syne+Mono&display=swap" rel="stylesheet">
+<style>
+        body {
+            background-color: #000;
+            color: pink;
+            font-family: "Syne Mono", monospace;
+            text-transform: uppercase;
+        }
+        ::selection {
+            color: white;
+        }
+        button ::selection {
+            color: #fff;
+        }
+        #signupToggle, #submitForm {
+            border-radius: 2px;
+        }
+        .glitch-text {
+            position: relative;
+            font-family: "Barrio", serif;
+        }
+       .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 red;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 blue;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(61px, 9999px, 52px, 0);
+                transform: skew(0.87deg);
+            }
+            5% {
+                clip: rect(33px, 9999px, 14px, 0);
+                transform: skew(0.29deg);
+            }
+            10% {
+                clip: rect(85px, 9999px, 66px, 0);
+                transform: skew(0.91deg);
+            }
+            15% {
+                clip: rect(52px, 9999px, 14px, 0);
+                transform: skew(0.85deg);
+            }
+            20% {
+                clip: rect(11px, 9999px, 78px, 0);
+                transform: skew(0.13deg);
+            }
+            25% {
+                clip: rect(85px, 9999px, 37px, 0);
+                transform: skew(0.61deg);
+            }
+            30% {
+                clip: rect(22px, 9999px, 73px, 0);
+                transform: skew(0.97deg);
+            }
+            35% {
+                clip: rect(11px, 9999px, 32px, 0);
+                transform: skew(0.55deg);
+            }
+            40% {
+                clip: rect(84px, 9999px, 93px, 0);
+                transform: skew(0.36deg);
+            }
+            45% {
+                clip: rect(64px, 9999px, 8px, 0);
+                transform: skew(0.91deg);
+            }
+            50% {
+                clip: rect(5px, 9999px, 50px, 0);
+                transform: skew(0.74deg);
+            }
+            55% {
+                clip: rect(49px, 9999px, 48px, 0);
+                transform: skew(0.37deg);
+            }
+            60% {
+                clip: rect(76px, 9999px, 10px, 0);
+                transform: skew(0.49deg);
+            }
+            65% {
+                clip: rect(9px, 9999px, 26px, 0);
+                transform: skew(0.38deg);
+            }
+            70% {
+                clip: rect(14px, 9999px, 82px, 0);
+                transform: skew(0.66deg);
+            }
+            75% {
+                clip: rect(44px, 9999px, 81px, 0);
+                transform: skew(0.44deg);
+            }
+            80% {
+                clip: rect(57px, 9999px, 54px, 0);
+                transform: skew(0.84deg);
+            }
+            85% {
+                clip: rect(28px, 9999px, 95px, 0);
+                transform: skew(0.73deg);
+            }
+            90% {
+                clip: rect(35px, 9999px, 12px, 0);
+                transform: skew(0.55deg);
+            }
+            95% {
+                clip: rect(83px, 9999px, 67px, 0);
+                transform: skew(0.46deg);
+            }
+            100% {
+                clip: rect(51px, 9999px, 79px, 0);
+                transform: skew(0.83deg);
+            }
+        }
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(29px, 9999px, 19px, 0);
+                transform: skew(0.37deg);
+            }
+            5% {
+                clip: rect(73px, 9999px, 36px, 0);
+                transform: skew(0.93deg);
+            }
+            10% {
+                clip: rect(22px, 9999px, 50px, 0);
+                transform: skew(0.12deg);
+            }
+            15% {
+                clip: rect(92px, 9999px, 5px, 0);
+                transform: skew(0.84deg);
+            }
+            20% {
+                clip: rect(3px, 9999px, 91px, 0);
+                transform: skew(0.38deg);
+            }
+            25% {
+                clip: rect(54px, 9999px, 27px, 0);
+                transform: skew(0.51deg);
+            }
+            30% {
+                clip: rect(68px, 9999px, 15px, 0);
+                transform: skew(0.93deg);
+            }
+            35% {
+                clip: rect(38px, 9999px, 54px, 0);
+                transform: skew(0.24deg);
+            }
+            40% {
+                clip: rect(14px, 9999px, 42px, 0);
+                transform: skew(0.77deg);
+            }
+            45% {
+                clip: rect(5px, 9999px, 78px, 0);
+                transform: skew(0.55deg);
+            }
+            50% {
+                clip: rect(88px, 9999px, 44px, 0);
+                transform: skew(0.74deg);
+            }
+            55% {
+                clip: rect(62px, 9999px, 84px, 0);
+                transform: skew(0.37deg);
+            }
+            60% {
+                clip: rect(53px, 9999px, 94px, 0);
+                transform: skew(0.66deg);
+            }
+            65% {
+                clip: rect(29px, 9999px, 28px, 0);
+                transform: skew(0.38deg);
+            }
+            70% {
+                clip: rect(37px, 9999px, 5px, 0);
+                transform: skew(0.16deg);
+            }
+            75% {
+                clip: rect(95px, 9999px, 69px, 0);
+                transform: skew(0.84deg);
+            }
+            80% {
+                clip: rect(24px, 9999px, 51px, 0);
+                transform: skew(0.43deg);
+            }
+            85% {
+                clip: rect(74px, 9999px, 28px, 0);
+                transform: skew(0.73deg);
+            }
+            90% {
+                clip: rect(48px, 9999px, 11px, 0);
+                transform: skew(0.55deg);
+            }
+            95% {
+                clip: rect(63px, 9999px, 39px, 0);
+                transform: skew(0.46deg);
+            }
+            100% {
+                clip: rect(83px, 9999px, 55px, 0);
+                transform: skew(0.83deg);
+            }
+       }
+      </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center text-center p-4">
+    <main class="space-y-8 max-w-4xl">
+        <h1 
+            class="text-5xl md:text-7xl lg:text-8xl font-black glitch-text" 
+            data-text="We deserve a better scene. Coming soon."
+        >
+            we deserve a better scene. coming soon.
+        </h1>
+        
+        <div class="relative">
+            <!-- Notification banner (hidden by default) -->
+            <div 
+                id="notification" 
+                class="hidden fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-sm bg-white text-black py-3 px-6 rounded-lg shadow-lg"
+                role="alert"
+            >
+                <p id="notificationText" class="font-bold"></p>
+            </div>
+            
+            <button 
+                id="signupToggle"
+                class="bg-white text-black px-8 py-4 rounded-full text-lg font-bold tracking-wider 
+                       hover:bg-gray-200 transition duration-300 transform hover:scale-105 active:scale-95"
+            >
+                SIGN UP FOR UPDATES
+            </button>
+            
+            <form 
+                id="contactForm" 
+                class="mt-6 max-w-md mx-auto hidden space-y-4"
+            >
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name"
+                    placeholder="name" 
+                    required 
+                    class="w-full px-4 py-3 bg-transparent border-2 border-white text-white 
+                           placeholder-gray-400 focus:outline-none focus:border-pink-500"
+                >
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    placeholder="email" 
+                    required 
+                    class="w-full px-4 py-3 bg-transparent border-2 border-white text-white 
+                           placeholder-gray-400 focus:outline-none focus:border-pink-500"
+                >
+                <input 
+                    type="text" 
+                    id="location" 
+                    name="location"
+                    placeholder="location" 
+                    required 
+                    class="w-full px-4 py-3 bg-transparent border-2 border-white text-white 
+                           placeholder-gray-400 focus:outline-none focus:border-pink-500"
+                >
+                <button id="submitForm"
+                    type="submit"
+                    class="w-full bg-white text-black px-8 py-4 rounded-full text-lg font-bold tracking-wider 
+                           hover:bg-gray-200 transition duration-300 transform hover:scale-105 active:scale-95"
+                >
+                    SUBMIT
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+    function showNotification(message, isError = false) {
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notificationText');
+        
+        notification.classList.remove('hidden', 'bg-white', 'bg-red-500');
+        notification.classList.add(isError ? 'bg-red-500' : 'bg-white');
+        notificationText.textContent = message;
+        
+        // Hide notification after 5 seconds
+        setTimeout(() => {
+            notification.classList.add('hidden');
+        }, 5000);
+    }
+
+    function submitForm(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const location = document.getElementById('location').value;
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzRVkgZ896El9rxD3pYloMlpE9hQX5T5vZPwhqgjDHCQTba2_PVQvtOQ4x7-tZ8Z1nZ/exec';
+        
+        // Show loading state
+        const submitButton = event.target.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'submitting...';
+        submitButton.disabled = true;
+
+        // Create a hidden form and submit it
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = scriptURL;
+        form.target = 'hidden_iframe';
+
+        // Add form fields
+        const fields = {
+            name: name,
+            email: email,
+            location: location,
+            source: 'A Better Scene Signup'
+        };
+
+        // Add all fields to the form
+        Object.entries(fields).forEach(([key, value]) => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = value;
+            form.appendChild(input);
+        });
+
+        // Create hidden iframe for submission
+        const iframe = document.createElement('iframe');
+        iframe.name = 'hidden_iframe';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        // Handle response
+        iframe.onload = function() {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            showNotification("thanks for signing up. expect to hear from us soon.");
+            event.target.reset();
+            document.getElementById('contactForm').classList.add('hidden');
+            document.body.removeChild(iframe);
+            document.body.removeChild(form);
+        }
+
+        iframe.onerror = function() {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            showNotification("seems like there's an error. try again?", true);
+        }
+
+        // Submit the form
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    // Toggle form visibility
+    document.getElementById('signupToggle').addEventListener('click', function() {
+        const contactForm = document.getElementById('contactForm');
+        contactForm.classList.toggle('hidden');
+    });
+
+    // Attach the submit event listener to the form
+    document.getElementById('contactForm').addEventListener('submit', submitForm);
+    </script>
+</body>
+</html>
